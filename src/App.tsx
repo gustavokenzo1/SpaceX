@@ -1,25 +1,39 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import React from "react";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import styled from "styled-components";
+import "./App.css";
+import { Dashboard } from "./pages/Dashboard";
+import { Intro } from "./pages/Intro";
+
+const SpaceContainer = styled.div`
+  width: 100%;
+  display: flex;
+  background-color: #111;
+  color: #fff;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+`;
+
+const client = new ApolloClient({
+  uri: "https://api.spacex.land/graphql",
+  cache: new InMemoryCache(),
+});
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ApolloProvider client={client} >
+      <SpaceContainer>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Intro />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+          </Routes>
+        </Router>
+      </SpaceContainer>
+    </ApolloProvider>
   );
 }
 
