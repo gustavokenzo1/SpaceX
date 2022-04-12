@@ -1,46 +1,34 @@
-# Getting Started with Create React App
+# SpaceX
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Status
+Work In Progress
 
-## Available Scripts
+# About
+This is a project that I have been wanting to do for a while, I just had no idea where to begin with, so I decided to just sit on my chair and search for some videos and documentations. It is a ReactJS web app that consumes the SpaceX API. Since I like to learn new things every project, I decided that I wanted to use GraphQL instead of the more common REST approach.
 
-In the project directory, you can run:
+I found out that GraphQL was quite pleasant to work with. From what I've read, the benefits only show up on larger applications, due to it's increased complexity for small projects, if you are the one developing the API. Since I'm just consuming this API, I could take full advantage of the benefits of GraphQL, such as only needing to make 1 requisition, and modeling the requisition with what and how I actually want the response to be, instead of making a requisitions that sends everything and then filtering on the client-side, like REST APIs.
 
-### `npm start`
+For the 3D part, I used React Three Fiber, which is a React no-compromises adaptation of ThreeJS. While being a very complete adaptation, I found it quite hard to learn, since Fiber has way less material on the internet, so I had to rely a lot on the documentation, which was very helpful. React Three Fiber takes benefits from React, such as Hooks and Components, which makes the code much cleaner than codes I've read that used ThreeJS. For the camera movements, I combined Fiber's Canvas Camera with React Three Drei for adding Stars and Orbit Controls. I also added custom Shaders using GLSL. For this part, it was mostly following a video along, because we had to manipulate vectors and matrices, which was very confusing and is something I'll have to study further later.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+For styling, I used styled-compoents, which made it very easy to work with re-using styles and conditionally changing them according to, for example, some state. Along with styled-compoents, I experimented with the Framer Motion library, which is used for animations. It made it very easy to make animations when the page was loaded, an action happened or the component was umounted from the DOM.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+And, finally, I used TypeScript as the main language. That's because, although many people hate having to type their variables, it proved to be extremely helpful as this project started growing in number of files, reducing the amount of error because of different types that JavaScript might've missed. It was also really nice when paired with React's Context API, which provided auto-completion throughout the whole application once I declared the types on the context folder.
 
-### `npm test`
+This is my favorite project so far. I wanted to make it special because it combines two fields I really enjoy: Programming and Space. It also was developed exactly 1 year after I started programming, so I wanted to make something kind of like a progress ruler. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# Technologies
+As mentioned above, here is a summary:
 
-### `npm run build`
+- ReactJS
+- TypeScript
+- Styled Components
+- ThreeJS
+- React Three Fiber
+- React Three Drei
+- GraphQL
+- GLSL
+- Framer Motion
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Images
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+![alt text](https://github.com/gustavokenzo1/SpaceX/blob/main/thumbnail.png?raw=true)
