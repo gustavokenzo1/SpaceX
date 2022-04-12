@@ -74,7 +74,9 @@ export const Card = ({ data, setShowInfo }: any) => {
                 : selectedMenu === "Rockets"
                 ? 400
                 : selectedMenu === "Upcoming Launches"
-                ? upcomingLaunches.length * 140
+                ? (upcomingLaunches.length * 140 < 200
+                  ? 200
+                  : upcomingLaunches.length * 140)
                 : 350
             );
           }}
@@ -96,9 +98,10 @@ export const Card = ({ data, setShowInfo }: any) => {
                     setIconsDelay(0);
                     setSeparatorDelay(1);
                     setCardItemDelay(1);
+                    setCardHeight(400);
+                    setCardDelay(2);
                     setTimeout(function () {
                       setSelectedMenu("Rockets");
-                      setCardHeight(400);
                     }, 500);
                   }}
                 >
@@ -110,13 +113,14 @@ export const Card = ({ data, setShowInfo }: any) => {
                     setIconsDelay(0);
                     setSeparatorDelay(1);
                     setCardItemDelay(1);
+                    setCardHeight(
+                      upcomingLaunches.length * 140 < 200
+                        ? 200
+                        : upcomingLaunches.length * 140
+                    );
+                    setCardDelay(2);
                     setTimeout(function () {
                       setSelectedMenu("Upcoming Launches");
-                      setCardHeight(
-                        upcomingLaunches.length * 140 < 200
-                          ? 200
-                          : upcomingLaunches.length * 140
-                      );
                     }, 500);
                   }}
                 >
@@ -155,6 +159,7 @@ export const Card = ({ data, setShowInfo }: any) => {
                 setIconsDelay={setIconsDelay}
                 setCardHeight={setCardHeight}
                 setShowInfo={setShowInfo}
+                setCardDelay={setCardDelay}
               />
             ) : selectedMenu === "Upcoming Launches" ? (
               <UpcomingLaunches
@@ -165,6 +170,7 @@ export const Card = ({ data, setShowInfo }: any) => {
                 setIconsDelay={setIconsDelay}
                 setCardHeight={setCardHeight}
                 setShowInfo={setShowInfo}
+                setCardDelay={setCardDelay}
               />
             ) : (
               <PastLaunches />

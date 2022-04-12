@@ -10,6 +10,8 @@ import { RocketInfo } from "../../components/RocketInfo";
 import { RemoveScrollBar } from "react-remove-scroll-bar";
 import { Card } from "../../components/Card";
 import { UpcomingLaunchesInfo } from "../../components/UpcomingLaunchesInfo";
+import { Sun } from "../../components/Sun";
+import { Loading } from "../../components/Loading";
 
 const DashboardContainer = styled.div`
   width: 100vw;
@@ -85,15 +87,16 @@ export const Dashboard = () => {
         transition={{ duration: 2 }}
       >
         <RemoveScrollBar />
-        <Canvas
-          gl={{ antialias: true, pixelRatio: window.devicePixelRatio }}
-          camera={{ position: [0, 0, 20] }}
-        >
-          <CameraMovement />
-          <Suspense fallback={null}>
+        <Suspense fallback={<Loading />}>
+          <Canvas
+            gl={{ antialias: true, pixelRatio: window.devicePixelRatio }}
+            camera={{ position: [0, 0, 20] }}
+          >
+            <CameraMovement />
             <Earth />
-          </Suspense>
-        </Canvas>
+            <Sun />
+          </Canvas>
+        </Suspense>
         <Card data={data} />
         <RocketInfo />
         <UpcomingLaunchesInfo />

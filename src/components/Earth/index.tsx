@@ -20,9 +20,13 @@ export const Earth = () => {
   useFrame(({ clock, camera }) => {
     cloudsRef.current!.rotation.y = clock.getElapsedTime() / 120;
 
+    crewRef.current!.position.z = Math.sin(clock.getElapsedTime() / 10) * 60;
+    crewRef.current!.position.x = Math.cos(clock.getElapsedTime() / 10) * 60;
+    crewRef.current!.rotation.x = clock.getElapsedTime() / 10;
+
     if (clock.getElapsedTime() > 5) {
-      setBocaChicaOpacity(0.8)
-      setKSCOpacity(0.8)
+      setBocaChicaOpacity(0.8);
+      setKSCOpacity(0.8);
     }
 
     if (KSCClicked) {
@@ -32,9 +36,10 @@ export const Earth = () => {
       camera.position.lerpVectors(current_pos, goal_pos, 0.1);
 
       if (current_pos.distanceTo(goal_pos) < 0.1) {
+        camera.lookAt(0, 0, 0);
         setKSCClicked(false);
         setBocaChicaHeight(18);
-        setBocaChicaWidth(70)
+        setBocaChicaWidth(70);
       }
     } else if (bocaChicaCliked) {
       const current_pos = camera.position.clone();
@@ -43,9 +48,10 @@ export const Earth = () => {
       camera.position.lerpVectors(current_pos, goal_pos, 0.1);
 
       if (current_pos.distanceTo(goal_pos) < 0.1) {
+        camera.lookAt(0, 0, 0);
         setBocaChicaClicked(false);
         setKSCHeight(18);
-        setKSCWidth(170)
+        setKSCWidth(170);
       }
     }
   });
@@ -102,10 +108,11 @@ export const Earth = () => {
   const [KSCOpacity, setKSCOpacity] = useState(0);
   const [BocaChicaOpacity, setBocaChicaOpacity] = useState(0);
 
+  const crewRef = useRef<THREE.Object3D>();
+
   return (
     <>
       <ambientLight intensity={0.2} />
-      <pointLight position={[5, 0, 7]} intensity={2} />
       <Stars
         radius={200}
         depth={50}
@@ -242,6 +249,24 @@ export const Earth = () => {
             />
           </div>
         </Html>
+      </mesh>
+      <mesh ref={crewRef} rotation={[1, 0, 0]}>
+        <mesh position={[0, 0, 0]}>
+          <cylinderGeometry attach="geometry" args={[1, 1, 2, 32]} />
+          <meshStandardMaterial attach="material" color={0xadd8ff} />
+        </mesh>
+        <mesh position={[0, 1.5, 0]}>
+          <coneGeometry attach="geometry" args={[1, 1, 32, 32]} />
+          <meshStandardMaterial attach="material" color={0xadd8ff} />
+        </mesh>
+        <mesh position={[0, 0, 0]}>
+          <coneGeometry attach="geometry" args={[2, 2, 2, 32]} />
+          <meshStandardMaterial attach="material" color={0x999999} />
+        </mesh>
+        <mesh position={[0, 0, 0]} rotation={[0, 1.5, 0]}>
+          <coneGeometry attach="geometry" args={[2, 2, 2, 32]} />
+          <meshStandardMaterial attach="material" color={0x999999} />
+        </mesh>
       </mesh>
     </>
   );

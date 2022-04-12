@@ -12,13 +12,19 @@ export const UpcomingLaunches = ({
   setCardItemDelay,
   setIconsDelay,
   setCardHeight,
+  setCardDelay,
 }: any) => {
   const { upcomingLaunches, setUpcoming, setRocket } = useRocket();
 
   return (
     <>
       <motion.div key="upcomingLaunches">
-        <InfoContainer>
+        <InfoContainer
+          as={motion.div}
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 1, delay: 1 }}
+        >
           {upcomingLaunches.map((launch: any, key: any) => {
             return (
               <div
@@ -38,16 +44,20 @@ export const UpcomingLaunches = ({
             );
           })}
           <ReturnButton
-            onClick={() => {              
-              setSeparatorDelay(0);
-              setCardItemDelay(1);
-              setIconsDelay(2);
+            onClick={() => {
+              setSeparatorDelay(1);
+              setCardItemDelay(0);
+              setIconsDelay(1);
               setUpcoming("");
+              setCardDelay(3);
+              setCardHeight(350);
               setTimeout(function () {
                 setSelectedMenu("");
-                setCardHeight(350);
               }, 1000);
             }}
+            as={motion.button}
+            exit={{ width: 0, opacity: 0, fontSize: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
           >
             Return
           </ReturnButton>

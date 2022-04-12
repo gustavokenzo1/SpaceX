@@ -13,6 +13,7 @@ export const Rockets = ({
   setCardItemDelay,
   setIconsDelay,
   setCardHeight,
+  setCardDelay,
 }: any) => {
   const { setRocket } = useRocket();
 
@@ -39,15 +40,19 @@ export const Rockets = ({
           })}
           <ReturnButton
             onClick={() => {
-              setSeparatorDelay(2);
-              setCardItemDelay(1);
-              setIconsDelay(2);
+              setSeparatorDelay(1);
+              setCardItemDelay(0);
+              setIconsDelay(1);
               setRocket("");
+              setCardDelay(3);
+              setCardHeight(350);
               setTimeout(function () {
                 setSelectedMenu("");
-                setCardHeight(350);
               }, 1000);
             }}
+            as={motion.button}
+            exit={{ width: 0, opacity: 0, fontSize: 0 }}
+            transition={{ duration: 0.5, delay: 1 }}
           >
             Return
           </ReturnButton>
