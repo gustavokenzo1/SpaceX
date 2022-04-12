@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/SpaceX/static/css/main.86ecbdbb.css",
+    "main.js": "/SpaceX/static/js/main.191ef34c.js",
+    "static/media/8k_earth_clouds.jpg": "/SpaceX/static/media/8k_earth_clouds.08fcd80007fae8fc7170.jpg",
+    "static/media/8k_earth_daymap.jpg": "/SpaceX/static/media/8k_earth_daymap.54672c1f3ba121d80470.jpg",
+    "static/media/8k_earth_normal_map.jpg": "/SpaceX/static/media/8k_earth_normal_map.930cf2e99bc548140c29.jpg",
+    "index.html": "/SpaceX/index.html",
+    "main.86ecbdbb.css.map": "/SpaceX/static/css/main.86ecbdbb.css.map",
+    "main.191ef34c.js.map": "/SpaceX/static/js/main.191ef34c.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.86ecbdbb.css",
+    "static/js/main.191ef34c.js"
+  ]
+}
