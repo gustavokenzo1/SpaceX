@@ -17,11 +17,11 @@ export const PastInfoContainer = styled.div`
   overflow-x: hidden;
 
   @media (max-width: 768px) {
-    width: 70%;
     min-height: 50%;
-    position: relative;
     margin-top: 2rem;
     overflow: scroll;
+    opacity: 1;
+    width: 80%;
   }
 `;
 
@@ -111,4 +111,4 @@ export const CloseIcon = styled.div`
   &:hover {
     color: #ff0000;
   }
-`
+`;

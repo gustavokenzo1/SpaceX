@@ -20,9 +20,9 @@ export const Earth = () => {
   useFrame(({ clock, camera }) => {
     cloudsRef.current!.rotation.y = clock.getElapsedTime() / 120;
 
-    crewRef.current!.position.z = Math.sin(clock.getElapsedTime() / 10) * 60;
+    /* crewRef.current!.position.z = Math.sin(clock.getElapsedTime() / 10) * 60;
     crewRef.current!.position.x = Math.cos(clock.getElapsedTime() / 10) * 60;
-    crewRef.current!.rotation.x = clock.getElapsedTime() / 10;
+    crewRef.current!.rotation.x = clock.getElapsedTime() / 10; */
 
     if (clock.getElapsedTime() > 5) {
       setBocaChicaOpacity(0.8);
@@ -107,8 +107,6 @@ export const Earth = () => {
   const [BocaChicaWidth, setBocaChicaWidth] = useState(70);
   const [KSCOpacity, setKSCOpacity] = useState(0);
   const [BocaChicaOpacity, setBocaChicaOpacity] = useState(0);
-
-  const crewRef = useRef<THREE.Object3D>();
 
   return (
     <>
@@ -249,24 +247,6 @@ export const Earth = () => {
             />
           </div>
         </Html>
-      </mesh>
-      <mesh ref={crewRef} rotation={[1, 0, 0]}>
-        <mesh position={[0, 0, 0]}>
-          <cylinderGeometry attach="geometry" args={[1, 1, 2, 32]} />
-          <meshStandardMaterial attach="material" color={0xeeeeee} />
-        </mesh>
-        <mesh position={[0, 1.5, 0]}>
-          <coneGeometry attach="geometry" args={[1, 1, 32, 32]} />
-          <meshStandardMaterial attach="material" color={0xeeeeee} />
-        </mesh>
-        <mesh position={[0, 0, 0]}>
-          <coneGeometry attach="geometry" args={[2, 2, 2, 32]} />
-          <meshStandardMaterial attach="material" color={0x999999} />
-        </mesh>
-        <mesh position={[0, 0, 0]} rotation={[0, 1.5, 0]}>
-          <coneGeometry attach="geometry" args={[2, 2, 2, 32]} />
-          <meshStandardMaterial attach="material" color={0x999999} />
-        </mesh>
       </mesh>
     </>
   );

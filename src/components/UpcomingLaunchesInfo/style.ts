@@ -18,9 +18,10 @@ export const UpcomingInfoContainer = styled.div`
   @media (max-width: 768px) {
     width: 70%;
     min-height: 50%;
-    position: relative;
+    position: absolute;
     margin-top: 2rem;
     overflow: scroll;
+    opacity: 1;
   }
 `;
 

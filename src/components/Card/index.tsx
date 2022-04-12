@@ -64,8 +64,8 @@ export const Card = ({ data, setShowInfo }: any) => {
       animate={{ opacity: 0.7, height: cardHeight }}
       exit={{ opacity: 0 }}
       transition={{ duration: 0.5, delay: cardDelay }}
-      drag
-      dragConstraints={{ left: 10, right: 200, top: 10, bottom: 200 }}
+      /* drag
+      dragConstraints={{ left: 10, right: 200, top: 10, bottom: 200 }} */
       whileHover={{ opacity: 1, transition: { duration: 0.1 } }}
     >
       <div style={{ width: "100%" }}>
