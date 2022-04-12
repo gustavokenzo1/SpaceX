@@ -13,6 +13,8 @@ type RocketTypes = {
   setPastLaunches: (pastLaunches: any) => void;
   past: string;
   setPast: (past: string) => void;
+  photoToShow: number;
+  setPhotoToShow: (photoToShow: number) => void;
 };
 
 const RocketContext = createContext({} as RocketTypes);
@@ -26,6 +28,8 @@ export default function RocketProvider({ children }: any) {
 
   const [pastLaunches, setPastLaunches] = useState([]);
   const [past, setPast] = useState("");
+
+  const [photoToShow, setPhotoToShow] = useState(0);
 
   return (
     <RocketContext.Provider
@@ -42,6 +46,8 @@ export default function RocketProvider({ children }: any) {
         setPastLaunches,
         past,
         setPast,
+        photoToShow,
+        setPhotoToShow,
       }}
     >
       {children}
@@ -64,6 +70,8 @@ export function useRocket() {
     setPastLaunches,
     past,
     setPast,
+    photoToShow,
+    setPhotoToShow,
   } = context;
 
   return {
@@ -79,5 +87,7 @@ export function useRocket() {
     setPastLaunches,
     past,
     setPast,
+    photoToShow,
+    setPhotoToShow,
   };
 }

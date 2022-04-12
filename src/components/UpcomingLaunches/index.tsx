@@ -14,7 +14,7 @@ export const UpcomingLaunches = ({
   setCardHeight,
   setCardDelay,
 }: any) => {
-  const { upcomingLaunches, setUpcoming, setRocket } = useRocket();
+  const { upcomingLaunches, setUpcoming, setRocket, setPast } = useRocket();
 
   return (
     <>
@@ -31,6 +31,7 @@ export const UpcomingLaunches = ({
                 key={key}
                 onClick={() => {
                   setUpcoming(key.toString());
+                  setPast("");
                   setRocket("");
                 }}
               >

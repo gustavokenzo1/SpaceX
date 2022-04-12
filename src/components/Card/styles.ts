@@ -11,6 +11,9 @@ export const CardContainer = styled.div`
   justify-content: center;
   transition: 0.3s;
   width: 30%;
+  overflow: scroll;
+  max-height: 400px;
+  overflow-x: hidden;
 
   @media (max-width: 768px) {
     width: 70%;
@@ -55,5 +58,5 @@ export const InfoContainer = styled.div`
 `;
 
 export const ActionIcon = styled.div`
-position: absolute;
-`
+  position: absolute;
+`;

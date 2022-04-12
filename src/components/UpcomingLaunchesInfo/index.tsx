@@ -7,10 +7,10 @@ import {
 } from "./style";
 
 export const UpcomingLaunchesInfo = () => {
-  const { upcoming, setUpcoming, rocket, upcomingLaunches } = useRocket();
+  const { upcoming, setUpcoming, rocket, upcomingLaunches, past } = useRocket();
   return (
     <AnimatePresence exitBeforeEnter={true}>
-      {upcoming && !rocket && (
+      {upcoming && !rocket && !past && (
         <UpcomingInfoContainer
           as={motion.div}
           initial={{ right: "-100%" }}
@@ -32,16 +32,14 @@ export const UpcomingLaunchesInfo = () => {
                     <div style={{ width: "70%" }}>{launch.details}</div>
                   </UpcomingDescription>
                   <UpcomingDescription>
-                    Launch Date:
-                    <div style={{ width: "60%" }}>{launch.launch_date_local}</div>
-                  </UpcomingDescription>
-                  <UpcomingDescription>
                     Rocket:
                     <div>{launch.rocket.rocket_name}</div>
                   </UpcomingDescription>
                   <UpcomingDescription>
                     Launch Site:
-                    <div style={{ width: "60%" }}>{launch.launch_site.site_name_long}</div>
+                    <div style={{ width: "60%" }}>
+                      {launch.launch_site.site_name_long}
+                    </div>
                   </UpcomingDescription>
                 </UpcomingInfos>
               );

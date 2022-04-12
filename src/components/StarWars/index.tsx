@@ -7,7 +7,7 @@ const StarWars = ({ handleClose }: any) => {
   return (
     <StarWarsContainer
       as={motion.div}
-      exit={{ scale: 10, opacity: 0}}
+      exit={{ opacity: 0 }}
       transition={{ duration: 2 }}
       key="down"
     >

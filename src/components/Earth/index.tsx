@@ -253,11 +253,11 @@ export const Earth = () => {
       <mesh ref={crewRef} rotation={[1, 0, 0]}>
         <mesh position={[0, 0, 0]}>
           <cylinderGeometry attach="geometry" args={[1, 1, 2, 32]} />
-          <meshStandardMaterial attach="material" color={0xadd8ff} />
+          <meshStandardMaterial attach="material" color={0xeeeeee} />
         </mesh>
         <mesh position={[0, 1.5, 0]}>
           <coneGeometry attach="geometry" args={[1, 1, 32, 32]} />
-          <meshStandardMaterial attach="material" color={0xadd8ff} />
+          <meshStandardMaterial attach="material" color={0xeeeeee} />
         </mesh>
         <mesh position={[0, 0, 0]}>
           <coneGeometry attach="geometry" args={[2, 2, 2, 32]} />

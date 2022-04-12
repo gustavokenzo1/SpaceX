@@ -12,6 +12,7 @@ import { Card } from "../../components/Card";
 import { UpcomingLaunchesInfo } from "../../components/UpcomingLaunchesInfo";
 import { Sun } from "../../components/Sun";
 import { Loading } from "../../components/Loading";
+import { PastLaunchesInfo } from "../../components/PastLaunchesInfo";
 
 const DashboardContainer = styled.div`
   width: 100vw;
@@ -61,6 +62,11 @@ const GET_INFOS = gql`
         site_name_long
       }
       mission_name
+      links {
+        video_link
+        flickr_images
+        mission_patch
+      }
     }
   }
 `;
@@ -100,6 +106,7 @@ export const Dashboard = () => {
         <Card data={data} />
         <RocketInfo />
         <UpcomingLaunchesInfo />
+        <PastLaunchesInfo />
       </DashboardContainer>
     </RocketProvider>
   );

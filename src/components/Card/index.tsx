@@ -11,6 +11,7 @@ import { BsFillPlusCircleFill } from "react-icons/bs";
 import { useRocket } from "../../context/Rocket";
 import { PastLaunches } from "../PastLaunches";
 import { UpcomingLaunches } from "../UpcomingLaunches";
+import { RemoveScrollBar } from "react-remove-scroll-bar";
 
 export const Card = ({ data, setShowInfo }: any) => {
   const [selectedMenu, setSelectedMenu] = useState("");
@@ -24,11 +25,17 @@ export const Card = ({ data, setShowInfo }: any) => {
   const [cardHeight, setCardHeight] = useState(350);
   const [showCard, setShowCard] = useState(true);
 
-  const { setRocketsData, setUpcomingLaunches, upcomingLaunches } = useRocket();
+  const {
+    setRocketsData,
+    setUpcomingLaunches,
+    upcomingLaunches,
+    setPastLaunches,
+    pastLaunches,
+  } = useRocket();
 
   useEffect(() => {
     async function fetchData() {
-      const { rockets, launchesUpcoming } = await data;
+      const { rockets, launchesUpcoming, launchesPast } = await data;
 
       const rocketNames = rockets.map((rocket: any) => {
         return rocket.name;
@@ -44,10 +51,11 @@ export const Card = ({ data, setShowInfo }: any) => {
       setRocketsList(rocketNames);
       setRocketsData(rockets);
       setUpcomingLaunches(upcomingLaunches);
+      setPastLaunches(launchesPast);
     }
 
     fetchData();
-  }, [data, setRocketsData, setUpcomingLaunches]);
+  }, [data, setRocketsData, setUpcomingLaunches, setPastLaunches]);
 
   return (
     <CardContainer
@@ -74,9 +82,11 @@ export const Card = ({ data, setShowInfo }: any) => {
                 : selectedMenu === "Rockets"
                 ? 400
                 : selectedMenu === "Upcoming Launches"
-                ? (upcomingLaunches.length * 140 < 200
+                ? upcomingLaunches.length * 140 < 200
                   ? 200
-                  : upcomingLaunches.length * 140)
+                  : upcomingLaunches.length * 140
+                : selectedMenu === "Past Launches"
+                ? 400
                 : 350
             );
           }}
@@ -173,7 +183,16 @@ export const Card = ({ data, setShowInfo }: any) => {
                 setCardDelay={setCardDelay}
               />
             ) : (
-              <PastLaunches />
+              <PastLaunches
+                separatorDelay={separatorDelay}
+                setSelectedMenu={setSelectedMenu}
+                setSeparatorDelay={setSeparatorDelay}
+                setCardItemDelay={setCardItemDelay}
+                setIconsDelay={setIconsDelay}
+                setCardHeight={setCardHeight}
+                setShowInfo={setShowInfo}
+                setCardDelay={setCardDelay}
+              />
             )}
           </AnimatePresence>
         )}
