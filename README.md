@@ -3,6 +3,8 @@
 # Status
 Work In Progress
 
+![alt text](https://github.com/gustavokenzo1/SpaceX/blob/main/thumbnail.png?raw=true)
+
 # About
 This is a project that I have been wanting to do for a while, I just had no idea where to begin with, so I decided to just sit on my chair and search for some videos and documentations. It is a ReactJS web app that consumes the SpaceX API. Since I like to learn new things every project, I decided that I wanted to use GraphQL instead of the more common REST approach.
 
@@ -28,7 +30,3 @@ As mentioned above, here is a summary:
 - GraphQL
 - GLSL
 - Framer Motion
-
-# Images
-
-![alt text](https://github.com/gustavokenzo1/SpaceX/blob/main/thumbnail.png?raw=true)
