@@ -4,14 +4,17 @@ import * as THREE from "three";
 import ColorMap from "../../assets/8k_earth_daymap.jpg";
 import NormalMap from "../../assets/8k_earth_normal_map.jpg";
 import CloudsMap from "../../assets/8k_earth_clouds.jpg";
+import GodMap from "../../assets/god.jpg";
+
 import { useRef, useState } from "react";
 import { useFrame } from "@react-three/fiber";
 
 export const Earth = () => {
-  const [colorMap, cloudsMap, normalMap] = useTexture([
+  const [colorMap, cloudsMap, normalMap, godMap] = useTexture([
     ColorMap,
     CloudsMap,
     NormalMap,
+    GodMap,
   ]);
   const cloudsRef = useRef<THREE.Object3D>();
   const [KSCClicked, setKSCClicked] = useState(false);
@@ -247,6 +250,14 @@ export const Earth = () => {
             />
           </div>
         </Html>
+      </mesh>
+      <mesh>
+        <boxGeometry attach="geometry" args={[4, 4, 4]} />
+        <meshStandardMaterial
+          attach="material"
+          map={godMap}
+          side={THREE.DoubleSide}
+        />
       </mesh>
     </>
   );

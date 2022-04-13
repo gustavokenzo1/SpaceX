@@ -25,7 +25,12 @@ export const Sun = () => {
   */
 
   useEffect(() => {
-    if (currentTime >= 3 && currentTime < 6) {
+    if (currentTime >= 0 && currentTime < 3) {
+      setSunX(-400);
+      setSunZ(-400);
+      setLightX(-300);
+      setLightZ(-300);
+    } else if (currentTime >= 3 && currentTime < 6) {
       setSunX(0);
       setSunZ(-400);
       setLightX(0);

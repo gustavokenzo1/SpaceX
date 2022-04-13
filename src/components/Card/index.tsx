@@ -11,7 +11,6 @@ import { BsFillPlusCircleFill } from "react-icons/bs";
 import { useRocket } from "../../context/Rocket";
 import { PastLaunches } from "../PastLaunches";
 import { UpcomingLaunches } from "../UpcomingLaunches";
-import { RemoveScrollBar } from "react-remove-scroll-bar";
 
 export const Card = ({ data, setShowInfo }: any) => {
   const [selectedMenu, setSelectedMenu] = useState("");
@@ -30,7 +29,6 @@ export const Card = ({ data, setShowInfo }: any) => {
     setUpcomingLaunches,
     upcomingLaunches,
     setPastLaunches,
-    pastLaunches,
   } = useRocket();
 
   useEffect(() => {
@@ -145,6 +143,7 @@ export const Card = ({ data, setShowInfo }: any) => {
                     setIconsDelay(0);
                     setSeparatorDelay(1);
                     setCardItemDelay(1);
+                    setCardDelay(2);
                     setTimeout(function () {
                       setSelectedMenu("Past Launches");
                       setCardHeight(400);
