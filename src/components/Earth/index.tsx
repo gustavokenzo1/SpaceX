@@ -115,7 +115,7 @@ export const Earth = () => {
     <>
       <ambientLight intensity={0.2} />
       <Stars
-        radius={200}
+        radius={300}
         depth={50}
         count={5000}
         factor={7}

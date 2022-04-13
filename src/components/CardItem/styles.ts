@@ -11,6 +11,7 @@ export const CardMenu = styled.div`
   border-radius: 5px;
   text-align: center;
   padding-left: 20px;
+  cursor: pointer;
   padding-right: 20px;
 
   &:hover {

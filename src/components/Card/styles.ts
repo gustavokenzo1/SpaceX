@@ -5,7 +5,6 @@ export const CardContainer = styled.div`
   border-radius: 7px;
   padding: 2rem;
   margin: 3rem;
-  cursor: pointer;
   background-color: #000;
   display: flex;
   justify-content: center;
@@ -59,4 +58,5 @@ export const InfoContainer = styled.div`
 
 export const ActionIcon = styled.div`
   position: absolute;
+  cursor: pointer;
 `;

@@ -13,6 +13,7 @@ import { UpcomingLaunchesInfo } from "../../components/UpcomingLaunchesInfo";
 import { Sun } from "../../components/Sun";
 import { Loading } from "../../components/Loading";
 import { PastLaunchesInfo } from "../../components/PastLaunchesInfo";
+import { Falcon } from "../../components/Falcon";
 
 const DashboardContainer = styled.div`
   width: 100vw;
@@ -101,6 +102,7 @@ export const Dashboard = () => {
             <CameraMovement />
             <Earth />
             <Sun />
+            <Falcon />
           </Canvas>
         </Suspense>
         <Card data={data} />

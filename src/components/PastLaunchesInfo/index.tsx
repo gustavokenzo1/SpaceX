@@ -49,7 +49,11 @@ export const PastLaunchesInfo = () => {
                       src={launch.links.mission_patch}
                       alt="mission"
                       width="50%"
-                      style={{ marginLeft: "5.5rem" }}
+                      style={{
+                        marginLeft: "27%",
+                        paddingTop: "2rem",
+                        paddingBottom: "2rem",
+                      }}
                     />
                   </PastDescription>
                   <PastDescription>
