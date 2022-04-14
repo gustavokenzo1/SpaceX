@@ -14,6 +14,7 @@ import { Sun } from "../../components/Sun";
 import { Loading } from "../../components/Loading";
 import { PastLaunchesInfo } from "../../components/PastLaunchesInfo";
 import { Falcon } from "../../components/Falcon";
+import { Message } from "../../components/Message";
 
 const DashboardContainer = styled.div`
   width: 100vw;
@@ -109,6 +110,7 @@ export const Dashboard = () => {
         <RocketInfo />
         <UpcomingLaunchesInfo />
         <PastLaunchesInfo />
+        <Message />
       </DashboardContainer>
     </RocketProvider>
   );
