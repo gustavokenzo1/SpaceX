@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/SpaceX/static/css/main.86ecbdbb.css",
-    "main.js": "/SpaceX/static/js/main.ddd7d19d.js",
+    "main.js": "/SpaceX/static/js/main.0f0c6d96.js",
     "static/media/8k_earth_clouds.jpg": "/SpaceX/static/media/8k_earth_clouds.08fcd80007fae8fc7170.jpg",
     "static/media/8k_earth_daymap.jpg": "/SpaceX/static/media/8k_earth_daymap.54672c1f3ba121d80470.jpg",
     "static/media/sun.jpg": "/SpaceX/static/media/sun.b34e6ead10e18ad3ad77.jpg",
@@ -9,10 +9,10 @@
     "static/media/god.jpg": "/SpaceX/static/media/god.c1b8d988f10b87753ecd.jpg",
     "index.html": "/SpaceX/index.html",
     "main.86ecbdbb.css.map": "/SpaceX/static/css/main.86ecbdbb.css.map",
-    "main.ddd7d19d.js.map": "/SpaceX/static/js/main.ddd7d19d.js.map"
+    "main.0f0c6d96.js.map": "/SpaceX/static/js/main.0f0c6d96.js.map"
   },
   "entrypoints": [
     "static/css/main.86ecbdbb.css",
-    "static/js/main.ddd7d19d.js"
+    "static/js/main.0f0c6d96.js"
   ]
 }
