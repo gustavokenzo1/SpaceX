@@ -3,7 +3,7 @@ import styled from "styled-components";
 
 const play = keyframes`
   0% {
-    transform: rotateX(21deg) translate3d(0, 100vh, 0);
+    transform: rotateX(21deg) translate3d(0, 90vh, 0);
     opacity: 1;
   }
   5% {
@@ -47,8 +47,8 @@ export const StarWarsText = styled.div`
   left: 13%;
   right: 13%;
   height: 100%;
-  animation: ${play} 3000s infinite;
-  width: 80%;
+  animation: ${play} 4000s infinite;
+  width: 60%;
 
   > a {
     color: #ffbe00;
@@ -72,6 +72,14 @@ export const StarWarsText = styled.div`
       background-color: #ffbe00;
       color: #000;
     }
+  }
+
+  @media (width < 1300px) {
+    animation: ${play} 3000s infinite;
+  }
+
+  @media (width < 768px) {
+    font-size: 2rem;
   }
 `;
 
@@ -105,9 +113,13 @@ export const FirstIntro = styled.div`
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
+  width: 100%;
 `;
 
 export const BlueText = styled.div`
   color: #00bfff;
   font-size: 2rem;
+  display: flex;
+  align-self: center;
+  padding: 2rem;
 `;

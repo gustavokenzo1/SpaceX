@@ -34,43 +34,37 @@ const StarWars = ({ handleClose }: any) => {
             transition={{ duration: 1 }}
             key="intro"
           >
-            <BlueText>A long time ago in a galaxy far,</BlueText>
-            <BlueText>far away...</BlueText>
+            <BlueText>
+              A long time ago in a galaxy far, <br /> far away...{" "}
+            </BlueText>
           </FirstIntro>
         ) : (
           <>
             <StarWarsText>
-              <h1>
-                EPISODE I <br /> THE API STRIKES{" "}
-              </h1>
+              <h2>
+                EPISODE I <br /> THE API MENACE
+              </h2>
               <p>
-                I know, I know... Without the music this intro doesn't have the
-                same effect, but give me a break, I don't want to get
-                copyrighted. This is a special project to me, so there will be a
-                big text below, that's why there is a skip button.
+                The year is 2022. Most humans continue to destroy their own
+                home. The Earth is only getting more and more polluted. Some
+                climate conferences have tried to soften the situation, but the
+                greed for money and power always overcomes the need for
+                preservation.
               </p>
               <p>
-                At the start of the year, I was an Aerospace Engineer student at
-                Universidade de Brasília (Brazil). But, at around February, I
-                decided to change courses and am now studying Software
-                Engineering (I'm currently on my 2nd semester), since
-                programming and everything that flies are my favorite fields
-                (and one of them has actual jobs lol).
+                Hoping to resolve that matter (not to confuse with they don't
+                also wanting money and being complete saints), some companies
+                and agencies are developing ways of exploring the space, by
+                building rockets and robots, so we can populate other places.
+                The most popular ones beign NASA and SpaceX.
               </p>
               <p>
-                Anyways... I've been wanting to do this project for quite some
-                time, but only had the idea in mind, and didn't have a clue on
-                how to start. I was going to delay it till vacation, so I could
-                have time to study, but I decided to do it anyway, because I
-                thought this was a freaking cool idea and I couldn't wait to see
-                how it turned out.
-              </p>
-              <p>
-                I took extra effort in this one, since it marks 1 year since my
-                first "Hello World", and I wanted to see how far I've come, and
-                to use this project as a progress rule of my learning path. Now
-                that I no long study Aerospace Engineering, I hope that I can
-                learn a lot more about this crazy world that is programming.
+                In this first episode, we will explore what SpaceX has done and
+                what they are planning to do. Taking a look at their launch
+                sites, rockets and previous and future launches, by using a
+                GraphQL API. And, who knows... maybe in the future I'll also
+                make a project about NASA, which I've already gotten a key for
+                their API.
               </p>
               <p>
                 All the technologies I used in this project, along with why I
@@ -82,15 +76,9 @@ const StarWars = ({ handleClose }: any) => {
                   rel="noopener noreferrer"
                   style={{ color: "#006fc9" }}
                 >
-                  README.md file on this repo's GitHub
-                </a>
-                . There may be repetitive text, since I'm writing this after
-                I've almost finished the project.
-              </p>
-              <p>
-                If you sticked to the end of this giant text, I'm jealous of how
-                much free time you have, but I hope you enjoy this project as
-                much as I enjoyed making it.
+                  README.md
+                </a>{" "}
+                file on this repo's GitHub page.
               </p>
               <button onClick={handleClose}>Explore</button>
             </StarWarsText>
