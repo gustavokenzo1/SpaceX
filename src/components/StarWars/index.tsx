@@ -52,8 +52,7 @@ const StarWars = ({ handleClose }: any) => {
                 preservation.
               </p>
               <p>
-                Hoping to resolve that matter (not to confuse with they don't
-                also wanting money and being complete saints), some companies
+                Hoping to resolve that matter, some companies
                 and agencies are developing ways of exploring the space, by
                 building rockets and robots, so we can populate other places.
                 The most popular ones beign NASA and SpaceX.
