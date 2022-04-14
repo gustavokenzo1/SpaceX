@@ -10,7 +10,6 @@ export const CardContainer = styled.div`
   justify-content: center;
   transition: 0.3s;
   width: 30%;
-  overflow: scroll;
   max-height: 400px;
   overflow-x: hidden;
 

@@ -65,6 +65,11 @@ export const Card = ({ data, setShowInfo }: any) => {
       /* drag
       dragConstraints={{ left: 10, right: 200, top: 10, bottom: 200 }} */
       whileHover={{ opacity: 1, transition: { duration: 0.1 } }}
+      style={
+        selectedMenu !== "Past Launches"
+          ? { overflow: "hidden" }
+          : { overflow: "scroll", overflowX: "hidden" }
+      }
     >
       <div style={{ width: "100%" }}>
         <ActionIcon
