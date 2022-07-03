@@ -1,7 +1,7 @@
 # SpaceX
 
 # Status
-Work In Progress
+API seems to no longer be updating, but a lot of data is still available.
 
 ![alt text](https://github.com/gustavokenzo1/SpaceX/blob/main/thumbnail.png?raw=true)
 

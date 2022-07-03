@@ -1,4 +1,4 @@
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ApolloClient, ApolloProvider, DefaultOptions, InMemoryCache } from "@apollo/client";
 import React from "react";
 import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import styled from "styled-components";
@@ -17,14 +17,26 @@ const SpaceContainer = styled.div`
   box-sizing: border-box;
 `;
 
+const defaultOptions: DefaultOptions = {
+  watchQuery: {
+    fetchPolicy: "no-cache",
+    errorPolicy: "ignore",
+  },
+  query: {
+    fetchPolicy: "no-cache",
+    errorPolicy: "all",
+  },
+};
+
 const client = new ApolloClient({
   uri: "https://api.spacex.land/graphql",
   cache: new InMemoryCache(),
+  defaultOptions: defaultOptions,
 });
 
 function App() {
   return (
-    <ApolloProvider client={client} >
+    <ApolloProvider client={client}>
       <SpaceContainer>
         <Router>
           <Routes>
